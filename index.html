@@ -26,6 +26,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 		<link rel="stylesheet" href="assets/css/style.min.css" />
 	</head>
+
 	<body>
 		<header>
 			<div class="bg-light shadow-sm mb-5">
@@ -44,7 +45,7 @@
 										<a class="nav-link" href="index.html">Accueil</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="cart.html">Panier <span id="item-number-nav" class="badge badge-secondary badge-pill">0</span></a>
+										<a class="nav-link" href="cart.html">Panier <span id="item-number-nav" class="badge badge-secondary badge-pill"></span></a>
 									</li>
 								</ul>
 							</div>
@@ -54,76 +55,12 @@
 			</div>
 		</header>
 
-		<div class="container">
-			<h1 class="text-center mb-5">Ours en peluche faits à la main</h1>
-			<div class="row" id="card-container">
-				<div class="col-12 col-md-6 col-lg-4 mb-5">
-					<article class="card text-center bg-light shadow">
-						<div class="embed-responsive embed-responsive-4by3">
-							<img class="card-img-top embed-responsive-item" src="assets/img/teddy_1.jpg" alt="Norbert" />
-						</div>
-						<div class="card-body">
-							<a class="stretched-link text-dark" href="item.html">
-								<h2 class="card-title">Norbert</h2>
-							</a>
-							<p class="card-text">29 €</p>
-						</div>
-					</article>
-				</div>
-				<div class="col-12 col-md-6 col-lg-4 mb-5">
-					<article class="card text-center bg-light shadow">
-						<div class="embed-responsive embed-responsive-4by3">
-							<img class="card-img-top embed-responsive-item" src="assets/img/teddy_2.jpg" alt="Arnold" />
-						</div>
-						<div class="card-body">
-							<a class="stretched-link text-dark" href="item.html">
-								<h2 class="card-title">Arnold</h2>
-							</a>
-							<p class="card-text">39 €</p>
-						</div>
-					</article>
-				</div>
-				<div class="col-12 col-md-6 col-lg-4 mb-5">
-					<article class="card text-center bg-light shadow">
-						<div class="embed-responsive embed-responsive-4by3">
-							<img class="card-img-top embed-responsive-item" src="assets/img/teddy_3.jpg" alt="Lenny and Carl" />
-						</div>
-						<div class="card-body">
-							<a class="stretched-link text-dark" href="item.html">
-								<h2 class="card-title">Lenny and Carl</h2>
-							</a>
-							<p class="card-text">59 €</p>
-						</div>
-					</article>
-				</div>
-				<div class="col-12 col-md-6 col-lg-4 mb-5">
-					<article class="card text-center bg-light shadow">
-						<div class="embed-responsive embed-responsive-4by3">
-							<img class="card-img-top embed-responsive-item" src="assets/img/teddy_4.jpg" alt="Gustav" />
-						</div>
-						<div class="card-body">
-							<a class="stretched-link text-dark" href="item.html">
-								<h2 class="card-title">Gustav</h2>
-							</a>
-							<p class="card-text">45 €</p>
-						</div>
-					</article>
-				</div>
-				<div class="col-12 col-md-6 col-lg-4 mb-5">
-					<article class="card text-center bg-light shadow">
-						<div class="embed-responsive embed-responsive-4by3">
-							<img class="card-img-top embed-responsive-item" src="assets/img/teddy_5.jpg" alt="Garfunkel" />
-						</div>
-						<div class="card-body">
-							<a class="stretched-link text-dark" href="item.html">
-								<h2 class="card-title">Garfunkel</h2>
-							</a>
-							<p class="card-text">55 €</p>
-						</div>
-					</article>
-				</div>
+		<main id="main">
+			<div class="container">
+				<h1 class="text-center mb-5">Ours en peluche faits à la main</h1>
+				<div class="row" id="card-container"></div>
 			</div>
-		</div>
+		</main>
 
 		<footer class="page-footer bg-dark shadow mt-5">
 			<div class="container text-center">
@@ -151,6 +88,8 @@
 			</div>
 		</footer>
 
+		<script src="assets/js/main.min.js"></script>
+		<script src="assets/js/index.min.js"></script>
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
