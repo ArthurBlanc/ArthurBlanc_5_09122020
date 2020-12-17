@@ -26,6 +26,7 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
 		<link rel="stylesheet" href="assets/css/style.min.css" />
 	</head>
+
 	<body>
 		<header>
 			<div class="bg-light shadow-sm mb-5">
@@ -44,7 +45,7 @@
 										<a class="nav-link" href="index.html">Accueil</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="cart.html">Panier <span id="item-number-nav" class="badge badge-secondary badge-pill">0</span></a>
+										<a class="nav-link" href="cart.html">Panier <span id="item-number-nav" class="badge badge-secondary badge-pill"></span></a>
 									</li>
 								</ul>
 							</div>
@@ -55,20 +56,20 @@
 		</header>
 
 		<main>
-			<div class="container text-center text-lg-left">
+			<div id="item" class="container text-center text-lg-left">
 				<div id="item-container" class="row">
 					<div class="col-12 col-lg-6 mx-auto d-block">
-						<img class="img-fluid" src="assets/img/teddy_1.jpg" height="500" widht="500" alt="Norbert" />
+						<img id="item-img" class="img-fluid" />
 					</div>
 					<div class="col-12 col-lg-6 my-auto">
 						<div class="row">
-							<div class="col-12 col-lg-6"><h1>Norbert</h1></div>
+							<div class="col-12 col-lg-6"><h1 id="item-name"></h1></div>
 							<div class="col-12 col-lg-6">
-								<a class="text-white" href="cart.html"><button type="button" id="btnAddToCart" class="btn btn-primary btn-lg float-lg-right">Ajouter au panier</button></a>
+								<button type="button" id="btnAddToCart" class="btn btn-primary btn-lg float-lg-right">Ajouter au panier</button>
 							</div>
 						</div>
 
-						<p>Prix : 29 €</p>
+						<p>Prix : <span id="item-price"></span> €</p>
 
 						<p>
 							Quantité :
@@ -79,14 +80,9 @@
 							</select>
 						</p>
 
-						<p>Description : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Description : <span id="item-description"></span></p>
 
-						<select id="select-color" class="custom-select">
-							<option value="Tan">Tan</option>
-							<option value="Chocolate">Chocolate</option>
-							<option value="Black">Black</option>
-							<option value="White">White</option>
-						</select>
+						<select id="select-color" class="custom-select"></select>
 					</div>
 				</div>
 			</div>
@@ -115,6 +111,8 @@
 			</div>
 		</footer>
 
+		<script src="assets/js/main.min.js"></script>
+		<script src="assets/js/item.min.js"></script>
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
