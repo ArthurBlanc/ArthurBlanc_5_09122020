@@ -1,4 +1,5 @@
 /* ↓ ITEM ↓ */
+/* Requête fetch pour récuperer les détails d'un article avec son id (id récupéré dans l'url de la page) */
 fetch(`http://localhost:3000/api/teddies/${new URLSearchParams(window.location.search).get("id")}`)
 	.then((response) => {
 		/* Vérification serveur */
@@ -6,11 +7,32 @@ fetch(`http://localhost:3000/api/teddies/${new URLSearchParams(window.location.s
 		else Promise.reject(response.status);
 	})
 
-	/* Si pas d'erreur affichage : */
+	/* Si pas d'erreur : */
 	.then((data) => {
 		/* Changement du titre de la page (nom article) */
 		pageTitle.textContent = data.name + " - Orinoco";
 		let price = data.price / 100;
+
+		/* Fonction permetant l'ajout d'article au panier (Local Storage) */
+		const addToLocalStorage = () => {
+			let quantity = document.getElementById("quantity");
+			let itemDetails = {
+				id: data._id,
+				name: data.name,
+				colorSelected: document.getElementById("select-color").value,
+				quantity: quantity.value,
+				priceForAll: price * quantity.value,
+				pricePerUnit: price,
+			};
+			let cartItem = JSON.parse(localStorage.getItem(itemDetails.id + itemDetails.colorSelected));
+			/* Vérifie si le panier contient deja l'article dans la couleur demandée, si c'est le cas la quantité est augmentée sinon l'article est ajouté au panier */
+			if (cartItem !== null) {
+				itemDetails.quantity = parseInt(itemDetails.quantity) + parseInt(cartItem.quantity);
+				itemDetails.priceForAll = price * itemDetails.quantity;
+			}
+			localStorage[itemDetails.id + itemDetails.colorSelected] = JSON.stringify(itemDetails);
+			window.location.href = "cart.html";
+		};
 
 		/* Generation HTML de la liste des couleurs */
 		data.colors.forEach((color) => {
@@ -22,6 +44,11 @@ fetch(`http://localhost:3000/api/teddies/${new URLSearchParams(window.location.s
 		const itemName = newValue("item-name", {}, data.name);
 		const itemPrice = newValue("item-price", {}, price);
 		const itemDescription = newValue("item-description", {}, data.description);
+
+		/* Bouton "ajouter au panier" avec EventListener (utilisation de la fonction "addToLocalStorage") */
+		btnAddToCart.addEventListener("click", function () {
+			addToLocalStorage();
+		});
 	})
 
 	/* Sinon affichage d'un message d'erreur */

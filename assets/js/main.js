@@ -6,6 +6,17 @@ const pageTitle = document.getElementById("title");
 const item = document.getElementById("item");
 const itemContainer = document.getElementById("item-container");
 const selectColor = document.getElementById("select-color");
+const btnAddToCart = document.getElementById("btnAddToCart");
+
+const main = document.getElementById("main");
+const cart = document.getElementById("cart");
+const cartContainer = document.getElementById("cart-container");
+const orderForm = document.getElementById("order-form");
+const couponForm = document.getElementById("coupon-form");
+const btnCoupon = document.getElementById("btn-coupon");
+const btnOrder = document.getElementById("btn-order");
+let totalPrice = 0;
+let products = [];
 /* ↑ VARIABLES ↑ */
 
 /* ↓ FUNCTIONS ↓ */
@@ -34,13 +45,19 @@ const newElement = (type, parent, attributes, ...contents) => {
 };
 
 /* Fonction permettant d'ajouter des attributs et contenus */
-const newValue = (id, attributes, text) => {
+const newValue = (id, attributes, textContent) => {
 	const element = document.getElementById(id);
 	for (key in attributes) {
 		element.setAttribute(key, attributes[key]);
 	}
-	element.textContent = text;
+	element.textContent = textContent;
 	return element;
+};
+
+/* Fonction permettant de retirer des articles du panier */
+const removeItem = (item) => {
+	localStorage.removeItem(item);
+	document.location.href = "cart.html";
 };
 /* ↑ FUNCTIONS ↑ */
 
