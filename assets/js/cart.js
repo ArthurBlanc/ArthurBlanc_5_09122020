@@ -36,6 +36,16 @@ if (!localStorage.length) {
 		couponForm.classList.add("was-validated");
 	});
 
+	/* Appel des fonctions de formatage des inputs "Numéro de carte bancaire" et "Date d'expiration" au chargement de la page */
+	onload = function () {
+		ccNumber.oninput = function () {
+			this.value = cc_format(this.value);
+		};
+		ccExpiration.oninput = function () {
+			this.value = cc_expiration(this.value);
+		};
+	};
+
 	/* Ajoute la classe "was-validated" au clic sur le bouton "Confirmer votre commande", ce qui va afficher les inputs validés en vert et ceux non validés en rouge avec un message d'erreur */
 	btnOrder.addEventListener("click", function () {
 		orderForm.classList.add("was-validated");
@@ -60,4 +70,4 @@ if (!localStorage.length) {
 		sendFormData(order);
 	});
 }
-/* ↓ CART ↓ */
+/* ↑ CART ↑ */

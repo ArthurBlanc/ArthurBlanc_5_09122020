@@ -14,7 +14,15 @@ const cartContainer = document.getElementById("cart-container");
 const orderForm = document.getElementById("order-form");
 const couponForm = document.getElementById("coupon-form");
 const btnCoupon = document.getElementById("btn-coupon");
+const ccNumber = document.getElementById("cc-number");
+const ccExpiration = document.getElementById("cc-expiration");
 const btnOrder = document.getElementById("btn-order");
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const address = document.getElementById("address");
+const city = document.getElementById("city");
+const zip = document.getElementById("zip");
+const email = document.getElementById("email");
 let totalPrice = 0;
 let products = [];
 /* ↑ VARIABLES ↑ */
@@ -89,6 +97,38 @@ const sendFormData = (data) => {
 		})
 		/* Sinon affichage des erreurs dans la console */
 		.catch((error) => console.log(error));
+};
+
+/* Fonction formatant le numéro de carte bancaire au format XXXX XXXX XXXX XXXX */
+const cc_format = (value) => {
+	var v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+	var matches = v.match(/\d{4,16}/g);
+	var match = (matches && matches[0]) || "";
+	var parts = [];
+	for (i = 0, len = match.length; i < len; i += 4) {
+		parts.push(match.substring(i, i + 4));
+	}
+	if (parts.length) {
+		return parts.join(" ");
+	} else {
+		return value;
+	}
+};
+
+/* Fonction formatant la date d'expération des cartes bancaires au format MM/AA (1 à 12 pour le mois et 21 à 29 pour l'année) */
+const cc_expiration = (value) => {
+	var v = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+	var matches = v.match(/\d{2,4}/g);
+	var match = (matches && matches[0]) || "";
+	var parts = [];
+	for (i = 0, len = match.length; i < len; i += 2) {
+		parts.push(match.substring(i, i + 2));
+	}
+	if (parts.length) {
+		return parts.join("/");
+	} else {
+		return value;
+	}
 };
 
 /* Fonction vidant le LocalStorage et la SessionStorage */
