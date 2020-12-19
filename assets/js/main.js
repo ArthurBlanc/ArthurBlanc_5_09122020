@@ -59,6 +59,43 @@ const removeItem = (item) => {
 	localStorage.removeItem(item);
 	document.location.href = "cart.html";
 };
+
+/* Fonction permettant d'envoyer les données du formulaire ainsi que la liste des id des produits commandés via un fetch POST */
+const sendFormData = (data) => {
+	fetch("http://localhost:3000/api/teddies/order", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(data), // Conversion des données au format JSON
+	})
+		.then((response) => {
+			/* Vérification reponse serveur */
+			if (response.ok) {
+				/* Si pas d'erreur lecture de la réponse au format JSON */
+				response.json().then((responseData) => {
+					/* Envoi des données de la réponse serveur et de la commande dans le SessionStorage */
+					sessionStorage.setItem("order_id", responseData.orderId);
+					sessionStorage.setItem("firstName", firstName.value);
+					sessionStorage.setItem("lastName", lastName.value);
+					sessionStorage.setItem("address", address.value);
+					sessionStorage.setItem("city", city.value);
+					sessionStorage.setItem("zip", zip.value);
+
+					/* Envoi de l'utilisateur sur la page order-confirmed.html */
+					window.location.href = "order-confirmed.html";
+				});
+			} else Promise.reject(response.status);
+		})
+		/* Sinon affichage des erreurs dans la console */
+		.catch((error) => console.log(error));
+};
+
+/* Fonction vidant le LocalStorage et la SessionStorage */
+const clearLocalStorage = () => {
+	localStorage.clear();
+	sessionStorage.clear();
+};
 /* ↑ FUNCTIONS ↑ */
 
 /* ↓ NAV ↓ */

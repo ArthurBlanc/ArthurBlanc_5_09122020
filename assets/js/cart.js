@@ -40,5 +40,24 @@ if (!localStorage.length) {
 	btnOrder.addEventListener("click", function () {
 		orderForm.classList.add("was-validated");
 	});
+
+	/* Envoi les données au serveur lors du submit du formulaire */
+	orderForm.addEventListener("submit", function (e) {
+		e.preventDefault(); /* Empêche le formulaire d'envoyer les données tant qu'elle n'ont pas été validées */
+
+		/* Récupération des valeurs entrées par l'utilisateur */
+		let contact = {
+			firstName: firstName.value,
+			lastName: lastName.value,
+			address: address.value,
+			city: city.value,
+			email: email.value,
+		};
+		/* Rempli "order" avec les données de "contact" et "products"*/
+		let order = { contact, products };
+
+		/* Appel de la fonction permant l'envoie des données au serveur */
+		sendFormData(order);
+	});
 }
 /* ↓ CART ↓ */
