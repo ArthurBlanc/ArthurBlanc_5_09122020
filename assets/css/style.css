@@ -28,3 +28,9 @@ footer {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+.modal-header,
+.modal-footer {
+  border: none !important;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,6 @@
 /* ↓ ITEM ↓ */
 /* Requête fetch pour récuperer les détails d'un article avec son id (id récupéré dans l'url de la page) */
-fetch(`http://localhost:3000/api/teddies/${new URLSearchParams(window.location.search).get("id")}`)
+fetch(`${apiUrl}/api/teddies/${new URLSearchParams(window.location.search).get("id")}`)
 	.then((response) => {
 		/* Vérification serveur */
 		if (response.ok) return response.json();
@@ -31,7 +31,6 @@ fetch(`http://localhost:3000/api/teddies/${new URLSearchParams(window.location.s
 				itemDetails.priceForAll = price * itemDetails.quantity;
 			}
 			localStorage[itemDetails.id + itemDetails.colorSelected] = JSON.stringify(itemDetails);
-			window.location.href = "cart.html";
 		};
 
 		/* Generation HTML de la liste des couleurs */
@@ -62,7 +61,7 @@ fetch(`http://localhost:3000/api/teddies/${new URLSearchParams(window.location.s
 		/* Block message d'erreur */
 		const errorRow = newElement("div", item, { class: "row" });
 		const errorContainer = newElement("div", errorRow, { class: "col-12 alert alert-danger text-center" });
-		const errorText = newElement("h2", errorContainer, {}, "Erreur, article introuvable");
+		const errorText = newElement("h1", errorContainer, { class: "h2" }, "Erreur, article introuvable");
 		const errorBacklinkContainer = newElement("div", errorContainer, { class: "col-12" });
 		const errorBacklink = newElement("a", errorBacklinkContainer, { class: "h3", href: "index.html" }, "Retourner à l'accueil");
 	});

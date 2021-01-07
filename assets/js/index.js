@@ -1,6 +1,6 @@
 /* ↓ INDEX ↓ */
 /* Requête fetch pour récuperer la liste des articles et leurs détails */
-fetch("http://localhost:3000/api/teddies")
+fetch(`${apiUrl}/api/teddies`)
 	.then((response) => {
 		/* Vérification serveur */
 		if (response.ok) return response.json();

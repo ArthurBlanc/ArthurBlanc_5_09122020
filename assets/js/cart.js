@@ -5,7 +5,7 @@ if (!localStorage.length) {
 	const emptyCartContainer = newElement("div", main, { class: "container" });
 	const emptyCartRow = newElement("div", emptyCartContainer, { class: "row" });
 	const emptyCartCol1 = newElement("div", emptyCartRow, { class: "col-12 alert alert-danger text-center" });
-	const emptyCartTitle = newElement("h2", emptyCartCol1, {}, "Votre panier est vide");
+	const emptyCartTitle = newElement("h1", emptyCartCol1, { class: "h2" }, "Votre panier est vide");
 	const emptyCartCo2 = newElement("div", emptyCartCol1, { class: "col-12" });
 	const emptyCartParagraph = newElement("p", emptyCartCo2, { class: "h3" });
 	const emptyCartBackToHomepageLink = newElement("a", emptyCartParagraph, { href: "index.html" }, "Retourner à l'accueil");
@@ -22,7 +22,7 @@ if (!localStorage.length) {
 
 		const cartLi = newElement("li", cartContainer, { class: "list-group-item d-flex justify-content-between lh-condensed" });
 		const liBody = newElement("div", cartLi, {});
-		const cartItemTitle = newElement("h6", liBody, { class: "my-0" });
+		const cartItemTitle = newElement("h3", liBody, { class: "my-0 h6" });
 		const cartItemLink = newElement("a", cartItemTitle, { href: "item.html?id=" + data.id }, data.name);
 		const cartItemDetails = newElement("small", liBody, { class: "text-muted" }, data.pricePerUnit + " € x" + data.quantity + " " + data.colorSelected);
 		const cartItemPriceForAll = newElement("span", cartLi, { class: "text-muted" }, data.priceForAll + " €");

@@ -1,4 +1,6 @@
 /* ↓ VARIABLES ↓ */
+let apiUrl = location.hostname === "localhost" || location.hostname === "127.0.0.1" ? "http://localhost:3000" : "https://p5-backend-arthurblanc.herokuapp.com/";
+
 const cardContainer = document.getElementById("card-container");
 const itemNumberNav = document.getElementById("item-number-nav");
 
@@ -70,7 +72,7 @@ const removeItem = (item) => {
 
 /* Fonction permettant d'envoyer les données du formulaire ainsi que la liste des id des produits commandés via un fetch POST */
 const sendFormData = (data) => {
-	fetch("http://localhost:3000/api/teddies/order", {
+	fetch(`${apiUrl}/api/teddies/order`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",

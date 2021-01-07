@@ -16,3 +16,8 @@ footer {
 .embed-responsive .card-img-top {
 	object-fit: cover;
 }
+
+.modal-header,
+.modal-footer {
+	border: none !important;
+}
