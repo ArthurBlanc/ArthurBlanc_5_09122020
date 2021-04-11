@@ -31,7 +31,7 @@ Mon rôle a été de créer le front-end du MVP (Minimum Viable Product) d'une d
 
 - L’application web doit être composée de 4 pages :
   -   Une page ***d'accueil*** référençant les articles en vente
-  -   Une page ***produit*** affichant dynamiquement l'article sélectionné par le client, celui pourra choisir une personnalisation de l'article et l'ajouter au panier
+  -   Une page ***produit*** affichant dynamiquement l'article sélectionné par le client, celui-ci pourra choisir une personnalisation de l'article et l'ajouter au panier
   -   Une page ***panier*** contenant la liste des articles dans le panier, le prix total et un formulaire pour passer commande. Les données du formulaire doivent être correctes et bien formatées avant d'être renvoyées au back-end.
   -   Une page de ***confirmation de commande*** remerciant le client pour sa commande, cette page doit indiquer le prix total et le numéro de commande envoyé par le serveur.
 - Dans un premier temps, il y aura une seule catégorie de produits parmi les propositions suivantes :

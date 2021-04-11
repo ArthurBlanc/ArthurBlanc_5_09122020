@@ -1,5 +1,11 @@
 /* ↓ VARIABLES ↓ */
-let apiUrl = location.hostname === "localhost" || location.hostname === "127.0.0.1" ? "http://localhost:3000" : "https://p5-backend-arthurblanc.herokuapp.com";
+/* Retourne "true" si le site est lancé en local */
+const isLocalhost = Boolean(
+	/* [::1] localhost pour IPv6 || 127.0.0.1 à 127.0.0.8 localhost pour IPv4 || "" Si le site est lancé directement via les fichiers HTML */
+	window.location.hostname === "localhost" || window.location.hostname === "[::1]" || window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/) || window.location.hostname === ""
+);
+/* Si isLocalhost est "true" alors apiUrl = http://localhost:3000 sinon apiUrl = https://p5-backend-arthurblanc.herokuapp.com */
+let apiUrl = isLocalhost ? "http://localhost:3000" : "https://p5-backend-arthurblanc.herokuapp.com";
 
 const cardContainer = document.getElementById("card-container");
 const itemNumberNav = document.getElementById("item-number-nav");
@@ -9,6 +15,9 @@ const item = document.getElementById("item");
 const itemContainer = document.getElementById("item-container");
 const selectColor = document.getElementById("select-color");
 const btnAddToCart = document.getElementById("btnAddToCart");
+
+const order = document.getElementById("order");
+const orderContainer = document.getElementById("order-container");
 
 const main = document.getElementById("main");
 const cart = document.getElementById("cart");

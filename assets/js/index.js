@@ -30,6 +30,6 @@ fetch(`${apiUrl}/api/teddies`)
 		const errorContainer = newElement("div", cardContainer, { class: "col-12 alert alert-danger text-center" });
 		const errorText = newElement("h2", errorContainer, {}, "Une erreur est survenue, veuillez réessayer plus tard");
 		const errorBacklinkContainer = newElement("div", errorContainer, { class: "col-12" });
-		const errorBacklink = newElement("a", errorBacklinkContainer, { class: "h3", href: "index.html" }, "Retourner à l'accueil");
+		const errorBacklink = newElement("a", errorBacklinkContainer, { class: "h3", href: "/" }, "Retourner à l'accueil");
 	});
 /* ↑ INDEX ↑ */
