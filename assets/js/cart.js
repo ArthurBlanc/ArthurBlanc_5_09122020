@@ -8,7 +8,7 @@ if (!localStorage.length) {
 	const emptyCartTitle = newElement("h1", emptyCartCol1, { class: "h2" }, "Votre panier est vide");
 	const emptyCartCo2 = newElement("div", emptyCartCol1, { class: "col-12" });
 	const emptyCartParagraph = newElement("p", emptyCartCo2, { class: "h3" });
-	const emptyCartBackToHomepageLink = newElement("a", emptyCartParagraph, { href: "/" }, "Retourner à l'accueil");
+	const emptyCartBackToHomepageLink = newElement("a", emptyCartParagraph, { href: "index.html" }, "Retourner à l'accueil");
 } else {
 	/* Boucle générateur HTML pour chaque article dans le panier */
 	for (let i = 0; i < localStorage.length; i++) {

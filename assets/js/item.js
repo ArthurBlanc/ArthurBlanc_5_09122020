@@ -64,6 +64,6 @@ fetch(`${apiUrl}/api/teddies/${new URLSearchParams(window.location.search).get("
 		const errorContainer = newElement("div", errorRow, { class: "col-12 alert alert-danger text-center" });
 		const errorText = newElement("h1", errorContainer, { class: "h2" }, "Erreur, article introuvable");
 		const errorBacklinkContainer = newElement("div", errorContainer, { class: "col-12" });
-		const errorBacklink = newElement("a", errorBacklinkContainer, { class: "h3", href: "/" }, "Retourner à l'accueil");
+		const errorBacklink = newElement("a", errorBacklinkContainer, { class: "h3", href: "index.html" }, "Retourner à l'accueil");
 	});
 /* ↑ ITEM ↑ */
