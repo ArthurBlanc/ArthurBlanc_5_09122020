@@ -89,40 +89,49 @@
 					</div>
 					<div class="col-md-8 order-md-1">
 						<h2 class="mb-3 h4">Adresse de facturation</h2>
-						<form id="order-form" class="needs-validation">
+						<form id="order-form" class="needs-validation" onsubmit="validate()">
 							<div class="row">
 								<div class="col-md-6 mb-3">
 									<label for="firstName">Prénom</label>
-									<input type="text" maxlength="128" class="form-control" id="firstName" required />
+									<input type="text" pattern="^([A-Za-z][A-Za-z ,.'-]*){1,128}$" maxlength="128" class="form-control" id="firstName" required />
 									<div class="invalid-feedback">Votre prénom semble être invalide</div>
 								</div>
 								<div class="col-md-6 mb-3">
 									<label for="lastName">Nom</label>
-									<input type="text" maxlength="128" class="form-control" id="lastName" required />
+									<input type="text" pattern="^([A-Za-z][A-Za-z ,.'-]*){1,128}$" maxlength="128" class="form-control" id="lastName" required />
 									<div class="invalid-feedback">Votre nom semble être invalide</div>
 								</div>
 							</div>
 
 							<div class="mb-3">
 								<label for="email">Email</label>
-								<input type="text" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" minlength="7" maxlength="255" class="form-control" id="email" placeholder="prenom@example.com" required />
+								<input
+									type="text"
+									pattern="(?=^.{5,255}$)^([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})$"
+									minlength="5"
+									maxlength="255"
+									class="form-control"
+									id="email"
+									placeholder="prenom@example.com"
+									required
+								/>
 								<div class="invalid-feedback">Votre email semble être invalide</div>
 							</div>
 
 							<div class="mb-3">
 								<label for="address">Adresse</label>
-								<input type="text" minlength="5" maxlength="255" class="form-control" id="address" placeholder="123 Rue de l'Église" required />
+								<input type="text" pattern="(?=^.{5,255}$)^\w+(\s\w+){2,}$" minlength="5" maxlength="255" class="form-control" id="address" placeholder="123 Rue de l'Église" required />
 								<div class="invalid-feedback">Votre adresse semble être invalide</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6 mb-3">
 									<label for="city">Ville</label>
-									<input type="text" maxlength="128" class="form-control" id="city" required />
+									<input type="text" pattern="(?=^.{1,128}$)^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" maxlength="128" class="form-control" id="city" required />
 									<div class="invalid-feedback">Votre ville semble être invalide</div>
 								</div>
 								<div class="col-md-6 mb-3">
 									<label for="zip">Code Postal</label>
-									<input type="text" pattern="^(([0-8][0-9])|(9[0-5,7])|(2[ab]))[0-9]{3}$" maxlength="5" class="form-control" id="zip" required />
+									<input type="text" pattern="(?=^.{5}$)^((([0-8][0-9])|(9[0-5,7])|(2[abAB]))[0-9]{3})$" maxlength="5" class="form-control" id="zip" required />
 									<div class="invalid-feedback">Votre code postal semble être invalide</div>
 								</div>
 							</div>
@@ -134,7 +143,7 @@
 							<div class="row">
 								<div class="col-md-6 mb-3">
 									<label for="cc-name">Nom sur votre carte bancaire</label>
-									<input type="text" maxlength="255" class="form-control" id="cc-name" required />
+									<input type="text" pattern="(?=^.{1,255}$)^[A-Za-z]+[A-Za-z ,.'-]*[ ]+[A-Za-z]+[A-Za-z ,.'-]*$" maxlength="255" class="form-control" id="cc-name" required />
 									<small class="text-muted">Votre nom complet comme affiché sur votre carte</small>
 									<div class="invalid-feedback">Votre nom semble être invalide</div>
 								</div>
@@ -142,7 +151,7 @@
 									<label for="cc-number">Numéro de votre carte bancaire</label>
 									<input
 										type="text"
-										pattern="^((4\d{3})|(5[1-5]\d{2})|(6011)|(34\d{1})|(37\d{1}))-?\s?\d{4}-?\s?\d{4}-?\s?\d{4}|3[4,7][\d\s-]{15}$"
+										pattern="(?=^.{19}$)^((4\d{3})|(5[1-5]\d{2})|(6011)|(34\d{1})|(37\d{1}))-?\s?\d{4}-?\s?\d{4}-?\s?\d{4}|3[4,7][\d\s-]$"
 										maxlength="19"
 										class="form-control"
 										id="cc-number"
@@ -156,7 +165,7 @@
 							<div class="row">
 								<div class="col-md-3 mb-3">
 									<label for="cc-expiration">Date d'expiration</label>
-									<input type="text" pattern="^((0[1-9])|(1[0-2]))[\/\.\-]*((2[1-9])|(2[1-9]))$" maxlength="5" class="form-control" id="cc-expiration" placeholder="MM/AA" required />
+									<input type="text" pattern="(?=^.{5}$)^(((0[1-9])|(1[0-2]))[\/\.\-]*((2[1-9])|(2[1-9])))" maxlength="5" class="form-control" id="cc-expiration" placeholder="MM/AA" required />
 									<small class="text-muted">Mois/Année, Ex : 12/25</small>
 									<div class="invalid-feedback">La date d'expiration de votre carte est invalide</div>
 								</div>
