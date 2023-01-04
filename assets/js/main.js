@@ -4,8 +4,8 @@ const isLocalhost = Boolean(
 	/* [::1] localhost pour IPv6 || 127.0.0.1 à 127.0.0.8 localhost pour IPv4 || "" Si le site est lancé directement via les fichiers HTML */
 	window.location.hostname === "localhost" || window.location.hostname === "[::1]" || window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/) || window.location.hostname === ""
 );
-/* Si isLocalhost est "true" alors apiUrl = http://localhost:3000 sinon apiUrl = https://orinoco.abcoding.fr/ */
-let apiUrl = isLocalhost ? "http://localhost:3000" : "https://orinoco.abcoding.fr/";
+/* Si isLocalhost est "true" alors apiUrl = http://localhost:3000 sinon apiUrl = https://orinoco.abcoding.fr */
+let apiUrl = isLocalhost ? "http://localhost:3000" : "https://orinoco.abcoding.fr";
 
 const cardContainer = document.getElementById("card-container");
 const itemNumberNav = document.getElementById("item-number-nav");
