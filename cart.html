@@ -93,12 +93,12 @@
 							<div class="row">
 								<div class="col-md-6 mb-3">
 									<label for="firstName">Prénom</label>
-									<input type="text" pattern="^([A-Za-z][A-Za-z ,.'-]*){1,128}$" maxlength="128" class="form-control" id="firstName" required />
+									<input type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{1,128}$" maxlength="128" class="form-control" id="firstName" required />
 									<div class="invalid-feedback">Votre prénom semble être invalide</div>
 								</div>
 								<div class="col-md-6 mb-3">
 									<label for="lastName">Nom</label>
-									<input type="text" pattern="^([A-Za-z][A-Za-z ,.'-]*){1,128}$" maxlength="128" class="form-control" id="lastName" required />
+									<input type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{1,128}$" maxlength="128" class="form-control" id="lastName" required />
 									<div class="invalid-feedback">Votre nom semble être invalide</div>
 								</div>
 							</div>
@@ -107,7 +107,7 @@
 								<label for="email">Email</label>
 								<input
 									type="text"
-									pattern="(?=^.{5,255}$)^([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})$"
+									pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
 									minlength="5"
 									maxlength="255"
 									class="form-control"
@@ -120,13 +120,13 @@
 
 							<div class="mb-3">
 								<label for="address">Adresse</label>
-								<input type="text" pattern="(?=^.{5,255}$)^\w+(\s\w+){2,}$" minlength="5" maxlength="255" class="form-control" id="address" placeholder="123 Rue de l'Église" required />
+								<input type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{2,255}$" minlength="5" maxlength="255" class="form-control" id="address" placeholder="123 Rue de l'Église" required />
 								<div class="invalid-feedback">Votre adresse semble être invalide</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6 mb-3">
 									<label for="city">Ville</label>
-									<input type="text" pattern="(?=^.{1,128}$)^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$" maxlength="128" class="form-control" id="city" required />
+									<input type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{2,}$" maxlength="128" class="form-control" id="city" required />
 									<div class="invalid-feedback">Votre ville semble être invalide</div>
 								</div>
 								<div class="col-md-6 mb-3">
@@ -143,7 +143,7 @@
 							<div class="row">
 								<div class="col-md-6 mb-3">
 									<label for="cc-name">Nom sur votre carte bancaire</label>
-									<input type="text" pattern="(?=^.{1,255}$)^[A-Za-z]+[A-Za-z ,.'-]*[ ]+[A-Za-z]+[A-Za-z ,.'-]*$" maxlength="255" class="form-control" id="cc-name" required />
+									<input type="text" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{2,255}$" maxlength="255" class="form-control" id="cc-name" required />
 									<small class="text-muted">Votre nom complet comme affiché sur votre carte</small>
 									<div class="invalid-feedback">Votre nom semble être invalide</div>
 								</div>

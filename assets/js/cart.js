@@ -56,21 +56,21 @@ if (!localStorage.length) {
 		e.preventDefault(); /* Empêche le formulaire d'envoyer les données tant qu'elle n'ont pas été validées */
 
 		/* Les différents pattern REGEX */
-		const nameRegex = /^([A-Za-z][A-Za-z ,.'-]*){1,128}$/g;
-		const emailRegex = /(?=^.{5,255}$)^([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})$/g;
-		const addressRegex = /(?=^.{5,255}$)^\w+(\s\w+){2,}$/g;
-		const cityRegex = /(?=^.{1,128}$)^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/g;
-		const zipRegex = /(?=^.{5}$)^((([0-8][0-9])|(9[0-5,7])|(2[abAB]))[0-9]{3})$/g;
-		const fullNameRegex = /(?=^.{1,255}$)^[A-Za-z]+[A-Za-z ,.'-]*[ ]+[A-Za-z]+[A-Za-z ,.'-]*$/g;
-		const ccNumberRegex = /(?=^.{19}$)^((4\d{3})|(5[1-5]\d{2})|(6011)|(34\d{1})|(37\d{1}))-?\s?\d{4}-?\s?\d{4}-?\s?\d{4}|3[4,7][\d\s-]$/g;
-		const ccExpirationRegex = /(?=^.{5}$)^(((0[1-9])|(1[0-2]))[\/\.\-]*((2[1-9])|(2[1-9])))/g;
-		const ccCVVRegex = /^[0-9]{3}$/g;
+		const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{1,128}$/;
+		const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+		const addressRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{2,255}$/;
+		const cityRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{2,}$/;
+		const zipRegex = /(?=^.{5}$)^((([0-8][0-9])|(9[0-5,7])|(2[abAB]))[0-9]{3})$/;
+		const fullNameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ,.'-\s]{2,255}$/;
+		const ccNumberRegex = /(?=^.{19}$)^((4\d{3})|(5[1-5]\d{2})|(6011)|(34\d{1})|(37\d{1}))-?\s?\d{4}-?\s?\d{4}-?\s?\d{4}|3[4,7][\d\s-]$/;
+		const ccExpirationRegex = /(?=^.{5}$)^(((0[1-9])|(1[0-2]))[\/\.\-]*((2[1-9])|(2[1-9])))/;
+		const ccCVVRegex = /^[0-9]{3}$/;
 
 		var formValidated = true;
 
 		// Fonction pour verifier si le formulaire est bien validé
 		function validateInput(input, regex) {
-			const validated = regex.test(input);
+			const validated = regex.test(input.value);
 			// Si l'input n'est pas validé, alors formValidated sera false
 			if (!validated) {
 				formValidated = false;
