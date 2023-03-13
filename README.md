@@ -51,15 +51,15 @@ Mon rôle a été de créer le front-end du MVP (Minimum Viable Product) d'une d
 
 ### Installation et lancement du back-end :
 
-1. Cloner le repository du back-end:
+1. Cloner le repository du back-end :
 
 -   `git clone https://github.com/ArthurBlanc/Orinoco-backend`
 
-2. Installer toutes les dépendances pour le back-end:
+2. Installer toutes les dépendances pour le back-end :
 
 -   `npm install` ou `yarn`
 
-3. Lancer le back-end sur le port 3000 (port par défaut):
+3. Lancer le back-end sur le port 3000 (port par défaut) :
 
 -   `node server`
 
