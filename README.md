@@ -57,7 +57,7 @@ Mon rôle a été de créer le front-end du MVP (Minimum Viable Product) d'une d
 
 2. Installer toutes les dépendances pour le back-end:
 
--   `npm install` or `yarn`
+-   `npm install` ou `yarn`
 
 3. Lancer le back-end sur le port 3000 (port par défaut):
 
