@@ -71,7 +71,7 @@ Mon rôle a été de créer le front-end du MVP (Minimum Viable Product) d'une d
 
 3. Ouvrez le dossier et double-cliquez sur le fichier HTML index pour le visualiser dans votre navigateur web (ou utilisez live-server sur Visual Studio Code, par exemple).
 
-4. Pour effectuer des modifications, éditez le fichier HTML ou CSS à l'aide d'un éditeur de texte et enregistrez le fichier. Actualisez la page web dans votre navigateur pour voir la version mise à jour.
+4. Pour effectuer des modifications, éditez les fichiers HTML, CSS ou JS à l'aide d'un éditeur de texte et enregistrez le fichier. Actualisez la page web dans votre navigateur pour voir la version mise à jour.
 
 ## Développé avec :
 
@@ -150,7 +150,7 @@ My role was to create the front-end of the MVP (Minimum Viable Product) of one o
 
 3. Open the folder and double-click on the index HTML file to view it in your web browser (or use live-server on Visual Studio Code for example).
 
-4. To make changes, edit the HTML or CSS file using a text editor and save the file. Refresh the web page in your browser to see the updated version.
+4. To make changes, edit the HTML, CSS or JS files using a text editor and save the file. Refresh the web page in your browser to see the updated version.
 
 That's it!
 
